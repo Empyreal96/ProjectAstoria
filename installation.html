@@ -1,0 +1,325 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectAstoria Instructions</title>
+    <style>
+        /* Start Global Rules */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Small */
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        /* Medium */
+        @media (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        /* Large */
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+
+        /* End Global Rules */
+
+        /* Start Landing Page */
+        .landing-page header {
+            min-height: 80px;
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+            .landing-page header {
+                min-height: auto;
+                display: initial;
+            }
+        }
+
+        .landing-page header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 767px) {
+            .landing-page header .container {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .landing-page header .logo {
+            color: #5d5d5d;
+            font-style: italic;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .landing-page header .logo {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .landing-page header .links {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 767px) {
+            .landing-page header .links {
+                text-align: center;
+                gap: 10px;
+            }
+        }
+
+        .landing-page header .links li {
+            margin-left: 30px;
+            color: #5d5d5d;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        @media (max-width: 767px) {
+            .landing-page header .links li {
+                margin-left: auto;
+            }
+        }
+
+        .landing-page header .links li:first-child {
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #FFF;
+            background-color: #6c63ff;
+        }
+
+        .landing-page header .links li:not(:first-child):hover {
+            color: #6c63ff;
+        }
+
+        .landing-page .content .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 140px;
+            min-height: calc(100vh - 80px);
+        }
+
+        @media (max-width: 767px) {
+            .landing-page .content .container {
+                gap: 0;
+                min-height: calc(100vh - 101px);
+                justify-content: center;
+                flex-direction: column-reverse;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .landing-page .content .info {
+                text-align: center;
+                margin-bottom: 15px
+            }
+        }
+
+        .landing-page .content .info h1 {
+            color: #5d5d5d;
+            font-size: 44px;
+        }
+
+        .landing-page .content .info p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #5d5d5d;
+        }
+
+        .landing-page .content .info button {
+            border: 0;
+            border-radius: 20px;
+            padding: 12px 30px;
+            margin-top: 30px;
+            cursor: pointer;
+            color: #FFF;
+            background-color: #6c63ff;
+        }
+
+        .landing-page .content .image img {
+            max-width: 100%;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        dl dt {
+            font-weight: bold;
+        }
+
+        code {
+            color: #007bff;
+            font-size: 15px;
+        }
+
+        li a.menu {
+            color: black;
+        }
+
+        li:first-child a.menu {
+            color: whitesmoke;
+        }
+
+        /* End Landing Page */
+    </style>
+</head>
+
+<body>
+    <!-- Start Landing Page -->
+    <div class="landing-page">
+        <header>
+            <div class="container">
+                <a href="index.html" class="logo">Project <b>Astoria</b></a>
+                <ul class="links">
+                    <li><a class="menu" href="about.html">About</a></li>
+                    <li><a class="menu" href="installation.html">Installation</a></li>
+                    <li><a class="menu" href="tools.html">Tools</a></li>
+                    <li><a class="menu" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="content">
+            <div class="container">
+                <div class="info">
+
+                    <h2 style="color: crimson;">REQUIREMENTS</h2>
+                    <ul>
+                        <li>- Phone with W10M build <strong>10586</strong></li>
+                        <li>- [<a target="_blank"
+                                href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk">Download</a>]
+                            Astoria update package </li>
+                        <li>- [<a target="_blank"
+                                href="https://github.com/fadilfadz01/Universal_Updater/releases/latest">Download</a>]
+                            Universal Updater 2.7.1 (Or higher) </li>
+                        <li>- [<a target="_blank"
+                                href="https://github.com/ReneLergner/WPinternals/releases/latest">Download</a>]
+                            Windows Phone Internals (WPI)
+                        </li>
+                    </ul>
+
+                    <h3 style="color: #6c63ff;">PRE-UPDATE</h3>
+                    <ul>
+                        <li>- Don't connect <strong>WiFi</strong> before you finish</li>
+                        <li>- Battery charged <strong>50%</strong> or more</li>
+                    </ul>
+
+                    <h3 style="color: green">UPDATE STEPS</h3>
+
+                    <h4 style="color: dodgerblue;">PART 1</h4>
+                    <ol>
+                        <li>Flash Retail FFU <code>Skip if you're on 10586</code></li>
+                        <li>Set Phone date to <code>5th May 2016</code></li>
+                        <li>Unlock bootloader (<a target="_blank"
+                                href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/vF4AXTwL">PDF</a> |
+                            <a target="_blank"
+                                href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8">YouTube</a>)
+                        </li>
+                    </ol>
+
+                    <h4 style="color: dodgerblue;">PART 2</h4>
+                    <p style="color: crimson;">Push cabs below on stages not at once. <br /></p>
+                    <p style="color: green;">For easy setup use the latest <code>Universal Updater 2.7.1+</code></p>
+                    <ol>
+                        <li><strong>(Stage 1)</strong> Push <code>FlightSign</code> cab</li>
+                        <li>Wait until system update..</li>
+                        <br>
+                        <li><strong>(Stage 2)</strong> Push <code>14320</code> cabs</li>
+                        <li>Wait until system update..</li>
+                        <li>Done</li>
+                    </ol>
+
+                    <h2 style="color: blueviolet;">UNIVERSAL UPDATER GUIDE</h2>
+                    <ol>
+                        <li>Connect your device, ensure connection is well</li>
+                        <li>Open the apps, choose <strong style="color: green;">(1. Device)</strong></li>
+                        <li>Then choose <code>Offline update packages</code></li>
+                        <li>Copy path of the target stage</li>
+                        <li>Paste the <code>Offline packages path</code>, press Enter</li>
+                        <li>Universal Update will display features list</li>
+                        <li>Ensure required features are enabled</li>
+                        <li>Press <strong>'0'</strong> to Confirm</li>
+                        <li>Choose <code>1. Filter packages</code> (Important to choose filter)</li>
+                        <li>Read packages details, ensure date set to <code>(5th May 2016)</code></li>
+                        <li>Ensure <strong>WiFi</strong> is not connected</li>
+                        <li>If everything ready, choose <code>1. Push packages</code></li>
+                    </ol>
+                    <p>Once iutool finished pushing packages, navigate to:</p>
+                    <ol>
+                        <li>Settings</li>
+                        <li>Update & Security</li>
+                        <li>Phone Update</li>
+                    </ol>
+                    <p>And monitor the progress. If you received any error, <br />check the dialog that appear
+                        after push process.</p>
+                    <p>Usually (Stage 01) is short. <br />But (Stage 02) will take time, <br />so please wait and don't
+                        interrupt the process.</p>
+
+                    <h2 style="color: darkgreen;">POST UPDATE</h2>
+                    <p>The update will add test app <strong>(CPU-Z)</strong> at your files <strong>(Astoria)</strong>
+                        folder. <br />You can just click on
+                        it and install to test if the update working.</p>
+                    <br />
+                    <p style="color: crimson;">Keep in mind first installation will take time until Astoria initialize
+                    </p>
+                    <br />
+                    <p>Once update completed you can set the date back and enable WiFi.</p>
+
+                    <h2 style="color: brown;">Troubleshoot</h2>
+                    <ul>
+                        <li>If there was no progress at Phone Update after pushing cabs, try again.</li>
+                    </ul>
+                    <br />
+                    <br />
+                </div>
+                <div class="image">
+                    <img src="assets/imgs/home.512.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Landing Page -->
+</body>
+
+</html>
