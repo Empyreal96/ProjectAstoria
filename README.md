@@ -1,2 +1,2 @@
 # ProjectAstoria
-Guide on how to install Astoria on builds after RTM
+https://empyreal96.github.io/ProjectAstoria
