@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectAstoria Tools</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <style>
         /* Start Global Rules */
         * {
@@ -223,6 +224,32 @@
         <div class="content">
             <div class="container">
                 <div class="info">
+                    <h1 style="color: green;">USE ADB</h1>
+                    <p>
+                        To install APK apps directly from your PC, you need to use ADB (Android Debug Bridge).
+                        <br />However,
+                        ADB doesn't work directly with Astoria. First, you'll need to connect your phone using tool
+                        called <code>wconnect</code>.
+                    </p>
+
+                    <!--<p><strong>Get WConnect & ADB</strong> [<a target="_blank"
+                        href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk">Download</a>]</p>-->
+
+                    <h2 style="color: green;">Setting Up WConnect Agent</h2>
+                    <ol>
+                        <li>Prepare a PIN code from <strong>Settings &gt; Update &gt; For Developers</strong>.</li>
+                        <li>At <strong>Device Discovery</strong>, enable the toggle.</li>
+                        <li>Click on <strong>Pair</strong>, then use the given pin in the command below.</li>
+                        <li>Open <strong>CMD</strong> on your PC.</li>
+                        <li>Navigate to the wconnect folder using:
+                            <code>cd &quot;Location of wconnect folder&quot;</code>
+                        </li>
+                        <li>Connect your phone using the command: <code>wconnect usb &lt;pin&gt;</code></li>
+                        <li>Or via IP command: <code>wconnect 198.168.0.xxx &lt;pin&gt;</code></li>
+                        <li>Once your phone is connected, you can start using ADB commands.</li>
+                        <li>ADB install command: <code>adb install &quot;Path to APK app&quot;</code></li>
+                    </ol>
+
                     <h1 style="color: green;">ASTORIA TOOLS</h1>
                     <p>After you update to build <strong>14320</strong> with Astoria, <br />you can use these tools to
                         convert APK to
@@ -246,6 +273,9 @@
                             Manager</strong> can assist
                         in retrieving packed apps from the repository. <br />It also helps you to install games along
                         with their related data, <br />which is not possible with the normal installer.</p>
+                    <br />
+                    <br />
+                    <br />
                 </div>
                 <div class="image">
                     <img src="assets/imgs/home.512.png">
