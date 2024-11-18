@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectAstoria Tools</title>
+    <title>ProjectAstoria Repo</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* Start Global Rules */
         * {
@@ -61,6 +69,42 @@
             display: flex;
         }
 
+        .btn-group-vertical>.btn-group::after,
+        .btn-group-vertical>.btn-group::before,
+        .btn-toolbar::after,
+        .btn-toolbar::before,
+        .clearfix::after,
+        .clearfix::before,
+        .container-fluid::after,
+        .container-fluid::before,
+        .container::after,
+        .container::before,
+        .dl-horizontal dd::after,
+        .dl-horizontal dd::before,
+        .form-horizontal .form-group::after,
+        .form-horizontal .form-group::before,
+        .modal-footer::after,
+        .modal-footer::before,
+        .modal-header::after,
+        .modal-header::before,
+        .nav::after,
+        .nav::before,
+        .navbar-collapse::after,
+        .navbar-collapse::before,
+        .navbar-header::after,
+        .navbar-header::before,
+        .navbar::after,
+        .navbar::before,
+        .pager::after,
+        .pager::before,
+        .panel-body::after,
+        .panel-body::before,
+        .row::after,
+        .row::before {
+            display: unset;
+            content: unset;
+        }
+
         @media (max-width: 767px) {
             .landing-page header {
                 min-height: auto;
@@ -104,6 +148,7 @@
             .landing-page header .links {
                 text-align: center;
                 gap: 10px;
+                padding-bottom: 15px;
             }
         }
 
@@ -124,24 +169,22 @@
             border-radius: 20px;
             padding: 10px 20px;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #5db720;
         }
 
         .landing-page header .links li:not(:first-child):hover {
-            color: #6c63ff;
+            color: #46b702;
         }
 
         .landing-page .content .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 140px;
             min-height: calc(100vh - 80px);
         }
 
         @media (max-width: 767px) {
             .landing-page .content .container {
-                gap: 0;
                 min-height: calc(100vh - 101px);
                 justify-content: center;
                 flex-direction: column-reverse;
@@ -151,6 +194,11 @@
         @media (max-width: 767px) {
             .landing-page .content .info {
                 text-align: left;
+                margin-bottom: 15px
+            }
+
+            .landing-page .content .info-main {
+                text-align: center !important;
                 margin-bottom: 15px
             }
         }
@@ -174,7 +222,7 @@
             margin-top: 30px;
             cursor: pointer;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #46b702;
         }
 
         .landing-page .content .image img {
@@ -182,8 +230,8 @@
         }
 
         a {
-            color: #007bff;
-            text-decoration: none;
+            color: unset !important;
+            text-decoration: none !important;
         }
 
         dl dt {
@@ -204,6 +252,39 @@
         }
 
         /* End Landing Page */
+
+        .panel-title a {
+            display: block;
+            width: 100%;
+        }
+
+        .panel-info>.panel-heading {
+            color: #31708f;
+            background-color: #66c7f7;
+        }
+
+        .panel-info {
+            border-color: #66c7f7;
+        }
+
+        .panel-success>.panel-heading {
+            color: #305b31;
+            background-color: #92e670;
+        }
+
+        .panel-warning>.panel-heading {
+            color: #eee;
+            background-color: #bf5b8f;
+        }
+
+        .panel-warning {
+            border-color: #bf5b8f;
+        }
+
+        .panel-danger>.panel-heading {
+            color: #fff;
+            background-color: #e15b5b;
+        }
     </style>
 </head>
 
@@ -212,73 +293,125 @@
     <div class="landing-page">
         <header>
             <div class="container">
-                <a href="index.html" class="logo">Project <b>Astoria</b></a>
+                <a href="index.html" class="logo">Project <b style="color: #5db720;">Astoria</b></a>
                 <ul class="links">
                     <li><a class="menu" href="about.html">About</a></li>
                     <li><a class="menu" href="installation.html">Installation</a></li>
-                    <li><a class="menu" href="tools.html">Tools</a></li>
+                    <li><a class="menu" href="tools.html">Repo</a></li>
                     <li><a class="menu" href="faq.html">FAQ</a></li>
                 </ul>
             </div>
         </header>
         <div class="content">
             <div class="container">
-                <div class="info">
-                    <h1 style="color: green;">USE ADB</h1>
-                    <p>
-                        To install APK apps directly from your PC, you need to use ADB (Android Debug Bridge).
-                        <br />However,
-                        ADB doesn't work directly with Astoria. First, you'll need to connect your phone using tool
-                        called <code>wconnect</code>.
-                    </p>
+                <div class="info" style="width: 100%;">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseRepo">ASTORIA
+                                    REPO</a>
+                            </h4>
+                        </div>
+                        <div id="collapseRepo" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                WUT Mini (Windows Universal Tool) is now available for all W10M builds,<br />and it
+                                contain
+                                Astoria repo
+                                by default
+                                this will make getting packed apps easier, <br /> WUT is designed by default to auto
+                                install, it has also tools to restart Astoria service and create storage shortcut
+                                easily.
+                                <br /><br />
+                                <p><strong>Get WUT Mini</strong> [<a target="_blank"
+                                        href="https://github.com/basharast/wut/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!--<p><strong>Get WConnect &amp; ADB</strong> [<a target="_blank"
-                        href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk">Download</a>]</p>-->
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseTools">ASTORIA TOOLS</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTools" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p>After you update to build <strong>14320</strong> with Astoria, <br />you can use
+                                    these tools to
+                                    convert APK to
+                                    APPX or for installation:</p>
 
-                    <h2 style="color: green;">Setting Up WConnect Agent</h2>
-                    <ol>
-                        <li>Prepare a PIN code from <strong>Settings &gt; Update &gt; For Developers</strong>.</li>
-                        <li>At <strong>Device Discovery</strong>, enable the toggle.</li>
-                        <li>Click on <strong>Pair</strong>, then use the given pin in the command below.</li>
-                        <li>Open <strong>CMD</strong> on your PC.</li>
-                        <li>Navigate to the wconnect folder using:
-                            <code>cd &quot;Location of wconnect folder&quot;</code>
-                        </li>
-                        <li>Connect your phone using the command: <code>wconnect usb &lt;pin&gt;</code></li>
-                        <li>Or via IP command: <code>wconnect 198.168.0.xxx &lt;pin&gt;</code></li>
-                        <li>Once your phone is connected, you can start using ADB commands.</li>
-                        <li>ADB install command: <code>adb install &quot;Path to APK app&quot;</code></li>
-                    </ol>
+                                <br />
+                                <ul>
+                                    <li><strong>Astoria Package Manager</strong><br>
+                                        [<a target="_blank"
+                                            href="https://github.com/Empyreal96/Astoria-Package-Manager/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                    </li>
+                                    <br />
+                                    <li><strong>Apk2Appx Converter</strong><br>
+                                        [<a target="_blank"
+                                            href="https://github.com/fadilfadz01/Apk2Appx_Converter/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                    </li>
+                                </ul>
 
-                    <h1 style="color: green;">ASTORIA TOOLS</h1>
-                    <p>After you update to build <strong>14320</strong> with Astoria, <br />you can use these tools to
-                        convert APK to
-                        APPX or for installation:</p>
+                                <h2>More Details</h2>
+                                <p>By default, the basic system installer is able to install apps. <br />Additionally,
+                                    you can use
+                                    the Device Portal to do that. <br /><br />However, tools like the <strong>Astoria
+                                        Package
+                                        Manager</strong> can assist
+                                    in retrieving packed apps from the repository. <br />It also helps you to install
+                                    games along
+                                    with their related data, <br />which is not possible with the normal installer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseAdb" style="color: white;">USE ADB</a>
+                            </h4>
+                        </div>
+                        <div id="collapseAdb" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    To install APK apps directly from your PC, you need to use ADB (Android Debug
+                                    Bridge).
+                                    <br />However,
+                                    ADB doesn't work directly with Astoria. First, you'll need to connect your phone
+                                    using tool
+                                    called <code>wconnect</code>.
+                                </p>
+
+                                <p><strong>Get WConnect &amp; ADB</strong> [<a
+                                        target="_blank"
+                                        href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                </p>
+
+                                <h2 style="color: green;">Setting Up WConnect Agent</h2>
+                                <ol>
+                                    <li>Prepare a PIN code from <strong>Settings &gt; Update &gt; For
+                                            Developers</strong>.</li>
+                                    <li>At <strong>Device Discovery</strong>, enable the toggle.</li>
+                                    <li>Click on <strong>Pair</strong>, then use the given pin in the command below.
+                                    </li>
+                                    <li>Open <strong>CMD</strong> on your PC.</li>
+                                    <li>Navigate to the wconnect folder using:
+                                        <code>cd &quot;Location of wconnect folder&quot;</code>
+                                    </li>
+                                    <li>Connect your phone using the command: <code>wconnect usb &lt;pin&gt;</code></li>
+                                    <li>Or via IP command: <code>wconnect 198.168.0.xxx &lt;pin&gt;</code></li>
+                                    <li>Once your phone is connected, you can start using ADB commands.</li>
+                                    <li>ADB install command: <code>adb install &quot;Path to APK app&quot;</code></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
 
                     <br />
-                    <ul>
-                        <li><strong>Astoria Package Manager</strong><br>
-                            [<a target="_blank"
-                                href="https://github.com/Empyreal96/Astoria-Package-Manager">Download</a>]
-                        </li>
-                        <br />
-                        <li><strong>Apk2Appx Converter</strong><br>
-                            [<a target="_blank" href="https://github.com/fadilfadz01/Apk2Appx_Converter">Download</a>]
-                        </li>
-                    </ul>
-
-                    <h2>More Details</h2>
-                    <p>By default, the basic system installer is able to install apps. <br />Additionally, you can use
-                        the Device Portal to do that. <br /><br />However, tools like the <strong>Astoria Package
-                            Manager</strong> can assist
-                        in retrieving packed apps from the repository. <br />It also helps you to install games along
-                        with their related data, <br />which is not possible with the normal installer.</p>
                     <br />
                     <br />
-                    <br />
-                </div>
-                <div class="image">
-                    <img src="assets/imgs/home.512.png">
                 </div>
             </div>
         </div>

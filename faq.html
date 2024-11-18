@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectAstoria FAQ</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* Start Global Rules */
         * {
@@ -61,6 +69,42 @@
             display: flex;
         }
 
+        .btn-group-vertical>.btn-group::after,
+        .btn-group-vertical>.btn-group::before,
+        .btn-toolbar::after,
+        .btn-toolbar::before,
+        .clearfix::after,
+        .clearfix::before,
+        .container-fluid::after,
+        .container-fluid::before,
+        .container::after,
+        .container::before,
+        .dl-horizontal dd::after,
+        .dl-horizontal dd::before,
+        .form-horizontal .form-group::after,
+        .form-horizontal .form-group::before,
+        .modal-footer::after,
+        .modal-footer::before,
+        .modal-header::after,
+        .modal-header::before,
+        .nav::after,
+        .nav::before,
+        .navbar-collapse::after,
+        .navbar-collapse::before,
+        .navbar-header::after,
+        .navbar-header::before,
+        .navbar::after,
+        .navbar::before,
+        .pager::after,
+        .pager::before,
+        .panel-body::after,
+        .panel-body::before,
+        .row::after,
+        .row::before {
+            display: unset;
+            content: unset;
+        }
+
         @media (max-width: 767px) {
             .landing-page header {
                 min-height: auto;
@@ -104,6 +148,7 @@
             .landing-page header .links {
                 text-align: center;
                 gap: 10px;
+                padding-bottom: 15px;
             }
         }
 
@@ -124,24 +169,22 @@
             border-radius: 20px;
             padding: 10px 20px;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #5db720;
         }
 
         .landing-page header .links li:not(:first-child):hover {
-            color: #6c63ff;
+            color: #46b702;
         }
 
         .landing-page .content .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 140px;
             min-height: calc(100vh - 80px);
         }
 
         @media (max-width: 767px) {
             .landing-page .content .container {
-                gap: 0;
                 min-height: calc(100vh - 101px);
                 justify-content: center;
                 flex-direction: column-reverse;
@@ -151,6 +194,11 @@
         @media (max-width: 767px) {
             .landing-page .content .info {
                 text-align: left;
+                margin-bottom: 15px
+            }
+
+            .landing-page .content .info-main {
+                text-align: center !important;
                 margin-bottom: 15px
             }
         }
@@ -174,7 +222,7 @@
             margin-top: 30px;
             cursor: pointer;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #46b702;
         }
 
         .landing-page .content .image img {
@@ -182,8 +230,8 @@
         }
 
         a {
-            color: #007bff;
-            text-decoration: none;
+            color: unset !important;
+            text-decoration: none !important;
         }
 
         dl dt {
@@ -204,6 +252,39 @@
         }
 
         /* End Landing Page */
+
+        .panel-title a {
+            display: block;
+            width: 100%;
+        }
+
+        .panel-info>.panel-heading {
+            color: #31708f;
+            background-color: #66c7f7;
+        }
+
+        .panel-info {
+            border-color: #66c7f7;
+        }
+
+        .panel-success>.panel-heading {
+            color: #305b31;
+            background-color: #92e670;
+        }
+
+        .panel-warning>.panel-heading {
+            color: #eee;
+            background-color: #bf5b8f;
+        }
+
+        .panel-warning {
+            border-color: #bf5b8f;
+        }
+
+        .panel-danger>.panel-heading {
+            color: #fff;
+            background-color: #e15b5b;
+        }
     </style>
 </head>
 
@@ -212,11 +293,11 @@
     <div class="landing-page">
         <header>
             <div class="container">
-                <a href="index.html" class="logo">Project <b>Astoria</b></a>
+                <a href="index.html" class="logo">Project <b style="color: #5db720;">Astoria</b></a>
                 <ul class="links">
                     <li><a class="menu" href="about.html">About</a></li>
                     <li><a class="menu" href="installation.html">Installation</a></li>
-                    <li><a class="menu" href="tools.html">Tools</a></li>
+                    <li><a class="menu" href="tools.html">Repo</a></li>
                     <li><a class="menu" href="faq.html">FAQ</a></li>
                 </ul>
             </div>
@@ -224,7 +305,7 @@
         <div class="content">
             <div class="container">
                 <div class="info">
-                    <h2 style="color: crimson;">QUESTIONS & ANSWERS</h2>
+                    <h2 style="color: crimson;">QUESTIONS &amp; ANSWERS</h2>
                     <dl>
                         <dt>Can I interop Unlock?</dt>
                         <dd>Yes, generally features cabs will make initial interop unlock.</dd>

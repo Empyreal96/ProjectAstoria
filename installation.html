@@ -1,10 +1,19 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectAstoria Instructions</title>
+    <title>ProjectAstoria Installation</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* Start Global Rules */
         * {
@@ -61,6 +70,42 @@
             display: flex;
         }
 
+        .btn-group-vertical>.btn-group::after,
+        .btn-group-vertical>.btn-group::before,
+        .btn-toolbar::after,
+        .btn-toolbar::before,
+        .clearfix::after,
+        .clearfix::before,
+        .container-fluid::after,
+        .container-fluid::before,
+        .container::after,
+        .container::before,
+        .dl-horizontal dd::after,
+        .dl-horizontal dd::before,
+        .form-horizontal .form-group::after,
+        .form-horizontal .form-group::before,
+        .modal-footer::after,
+        .modal-footer::before,
+        .modal-header::after,
+        .modal-header::before,
+        .nav::after,
+        .nav::before,
+        .navbar-collapse::after,
+        .navbar-collapse::before,
+        .navbar-header::after,
+        .navbar-header::before,
+        .navbar::after,
+        .navbar::before,
+        .pager::after,
+        .pager::before,
+        .panel-body::after,
+        .panel-body::before,
+        .row::after,
+        .row::before {
+            display: unset;
+            content: unset;
+        }
+
         @media (max-width: 767px) {
             .landing-page header {
                 min-height: auto;
@@ -104,6 +149,7 @@
             .landing-page header .links {
                 text-align: center;
                 gap: 10px;
+                padding-bottom: 15px;
             }
         }
 
@@ -124,24 +170,22 @@
             border-radius: 20px;
             padding: 10px 20px;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #5db720;
         }
 
         .landing-page header .links li:not(:first-child):hover {
-            color: #6c63ff;
+            color: #46b702;
         }
 
         .landing-page .content .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 140px;
             min-height: calc(100vh - 80px);
         }
 
         @media (max-width: 767px) {
             .landing-page .content .container {
-                gap: 0;
                 min-height: calc(100vh - 101px);
                 justify-content: center;
                 flex-direction: column-reverse;
@@ -151,6 +195,11 @@
         @media (max-width: 767px) {
             .landing-page .content .info {
                 text-align: left;
+                margin-bottom: 15px
+            }
+
+            .landing-page .content .info-main {
+                text-align: center !important;
                 margin-bottom: 15px
             }
         }
@@ -174,7 +223,7 @@
             margin-top: 30px;
             cursor: pointer;
             color: #FFF;
-            background-color: #6c63ff;
+            background-color: #46b702;
         }
 
         .landing-page .content .image img {
@@ -182,8 +231,8 @@
         }
 
         a {
-            color: #007bff;
-            text-decoration: none;
+            color: unset !important;
+            text-decoration: none !important;
         }
 
         dl dt {
@@ -204,6 +253,39 @@
         }
 
         /* End Landing Page */
+
+        .panel-title a {
+            display: block;
+            width: 100%;
+        }
+
+        .panel-info>.panel-heading {
+            color: #31708f;
+            background-color: #66c7f7;
+        }
+
+        .panel-info {
+            border-color: #66c7f7;
+        }
+
+        .panel-success>.panel-heading {
+            color: #305b31;
+            background-color: #92e670;
+        }
+
+        .panel-warning>.panel-heading {
+            color: #eee;
+            background-color: #bf5b8f;
+        }
+
+        .panel-warning {
+            border-color: #bf5b8f;
+        }
+
+        .panel-danger>.panel-heading {
+            color: #fff;
+            background-color: #e15b5b;
+        }
     </style>
 </head>
 
@@ -212,163 +294,293 @@
     <div class="landing-page">
         <header>
             <div class="container">
-                <a href="index.html" class="logo">Project <b>Astoria</b></a>
+                <a href="index.html" class="logo">Project <b style="color: #5db720;">Astoria</b></a>
                 <ul class="links">
                     <li><a class="menu" href="about.html">About</a></li>
                     <li><a class="menu" href="installation.html">Installation</a></li>
-                    <li><a class="menu" href="tools.html">Tools</a></li>
+                    <li><a class="menu" href="tools.html">Repo</a></li>
                     <li><a class="menu" href="faq.html">FAQ</a></li>
                 </ul>
             </div>
         </header>
         <div class="content">
             <div class="container">
-                <div class="info">
+                <div class="info" style="width: 100%;">
+                    <!-- Bootstrap Panels without Accordion -->
+                    <div class="panel-group">
 
-                    <h2 style="color: crimson;">REQUIREMENTS</h2>
-                    <ul>
-                        <li>- Phone with W10M build <strong>10586</strong></li>
-                        <li>- [<a target="_blank"
-                                href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk">Download</a>]
-                            Astoria update package </li>
-                        <li>- [<a target="_blank"
-                                href="https://github.com/fadilfadz01/Universal_Updater/releases/latest">Download</a>]
-                            Universal Updater 2.7.6 (Or higher) </li>
-                        <li>- [<a target="_blank"
-                                href="https://github.com/ReneLergner/WPinternals/releases/latest">Download</a>]
-                            Windows Phone Internals (WPI)
-                        </li>
-                    </ul>
+                        <!-- REQUIREMENTS Panel -->
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseRequirements">REQUIREMENTS</a>
+                                </h4>
+                            </div>
+                            <div id="collapseRequirements" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>- Phone with W10M build <strong>10586</strong></li>
+                                        <li>- [<a target="_blank"
+                                                href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                            Astoria update package </li>
+                                        <li>- [<a target="_blank"
+                                                href="https://github.com/fadilfadz01/Universal_Updater/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                            Universal Updater 2.7.6 (Or higher) </li>
+                                        <li>- [<a target="_blank"
+                                                href="https://github.com/ReneLergner/WPinternals/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                            Windows Phone Internals (WPI)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h3 style="color: #6c63ff;">PRE-UPDATE</h3>
-                    <ul>
-                        <li>- Don't connect <strong>WiFi</strong> before you finish</li>
-                        <li>- Battery charged <strong>50%</strong> or more</li>
-                    </ul>
+                        <!-- PRE-UPDATE Panel -->
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapsePreUpdate">PRE-UPDATE</a>
+                                </h4>
+                            </div>
+                            <div id="collapsePreUpdate" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>- Don't connect <strong>WiFi</strong> before you finish</li>
+                                        <li>- Battery charged <strong>50%</strong> or more</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h3 style="color: green">UPDATE STEPS</h3>
+                        <!-- UPDATE STEPS Panel -->
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseUpdateSteps">UPDATE
+                                        STEPS</a>
+                                </h4>
+                            </div>
+                            <div id="collapseUpdateSteps" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <!-- Content for UPDATE STEPS -->
+                                    <h4 style="color: dodgerblue;">PART 1</h4>
+                                    <ol>
+                                        <li>Flash Retail FFU <code>Skip if you're on 10586</code></li>
+                                        <li>Set Phone date to <code>5th May 2016</code></li>
+                                        <li>Unlock bootloader (<a target="_blank"
+                                                href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/vF4AXTwL">PDF</a>
+                                            | <a target="_blank"
+                                                href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8">YouTube</a>)
+                                        </li>
+                                    </ol>
 
-                    <h4 style="color: dodgerblue;">PART 1</h4>
-                    <ol>
-                        <li>Flash Retail FFU <code>Skip if you're on 10586</code></li>
-                        <li>Set Phone date to <code>5th May 2016</code></li>
-                        <li>Unlock bootloader (<a target="_blank"
-                                href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/vF4AXTwL">PDF</a> |
-                            <a target="_blank"
-                                href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8">YouTube</a>)
-                        </li>
-                    </ol>
+                                    <h4 style="color: dodgerblue;">PART 2</h4>
+                                    <p style="color: crimson;">Push cabs below on stages not at once. <br /></p>
+                                    <p style="color: green;">For easy setup use the latest
+                                        <code>Universal Updater 2.7.6+</code>
+                                    </p>
+                                    <ol>
+                                        <li><strong>(Stage 1)</strong> Push <code>FlightSign</code> cab</li>
+                                        <li>Wait until system update..</li>
+                                        <br>
+                                        <li><strong>(Stage 2)</strong> Filter &amp; Push <code>14320</code> cabs</li>
+                                        <p style="color: crimson;">(Do not push all/multiple cabs without filtering them
+                                            for your device,<br /> if you are not sure how to; check Universal updater
+                                            below)</p>
+                                        <li>Wait until system update..</li>
+                                        <li>Done</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h4 style="color: dodgerblue;">PART 2</h4>
-                    <p style="color: crimson;">Push cabs below on stages not at once. <br /></p>
-                    <p style="color: green;">For easy setup use the latest <code>Universal Updater 2.7.6+</code></p>
-                    <ol>
-                        <li><strong>(Stage 1)</strong> Push <code>FlightSign</code> cab</li>
-                        <li>Wait until system update..</li>
-                        <br>
-                        <li><strong>(Stage 2)</strong> Filter &amp; Push <code>14320</code> cabs</li>
-						<p style="color: crimson;">(Do not push all/multiple cabs without filtering them for your device,<br/> if you are not sure how to; check Universal updater below)</li>
-                        <li>Wait until system update..</p>
-                        <li>Done</li>
-                    </ol>
+                        <!-- UNIVERSAL UPDATER GUIDE Panel -->
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseUpdaterGuide">UNIVERSAL UPDATER GUIDE</a>
+                                </h4>
+                            </div>
+                            <div id="collapseUpdaterGuide" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <h4>Connect &amp; Select Packages</h4>
+                                    <ol>
+                                        <li>Connect your device, ensure connection is well</li>
+                                        <li>Open the app, choose <strong style="color: green;">(1. Device)</strong></li>
+                                        <li>Then choose <code>Offline update packages</code></li>
+                                        <li>Copy path of the target stage</li>
+                                        <li>Paste the <code>Offline packages path</code>, <b>press Enter</b></li>
+                                    </ol>
 
-                    <h2 style="color: blueviolet;">UNIVERSAL UPDATER GUIDE</h2>
-                    <ol>
-                        <li>Connect your device, ensure connection is well</li>
-                        <li>Open the app, choose <strong style="color: green;">(1. Device)</strong></li>
-                        <li>Then choose <code>Offline update packages</code></li>
-                        <li>Copy path of the target stage</li>
-                        <li>Paste the <code>Offline packages path</code>, press Enter</li>
-                        <li>Universal Updater will display features list</li>
-                        <li>Ensure required features are enabled</li>
-                        <li>Press <strong>'0'</strong> to Confirm</li>
-                        <li>Choose <code>1. Filter packages</code> (Important to choose filter)</li>
-                        <li>Read packages details, ensure date set to <code>(5th May 2016)</code></li>
-                        <li>Ensure <strong>WiFi</strong> is not connected</li>
-                        <li>If everything ready, choose <code>1. Push packages</code></li>
-                    </ol>
-                    <p>Once iutool finished pushing packages, navigate to:</p>
-                    <ol>
-                        <li>Settings</li>
-                        <li>Update & Security</li>
-                        <li>Phone Update</li>
-                    </ol>
-                    <p>And monitor the progress. If you received any error, <br />check the dialog that appear
-                        after push process.</p>
-                    <p>Usually (Stage 01) is short. <br />But (Stage 02) will take time, <br />so please wait and don't
-                        interrupt the process.</p>
+                                    <br />
+                                    <h4>Review Features</h4>
+                                    <p style="color: crimson;">Required features enabled by default</p>
+                                    <ol>
+                                        <li>Universal Updater will display features list</li>
+                                        <li>Ensure required features are enabled</li>
+                                        <li>Press <strong>'0'</strong> to Confirm</li>
+                                    </ol>
 
-                    <h2 style="color: darkgreen;">POST UPDATE</h2>
-                    <p>The update will add test app <strong>(CPU-Z)</strong> at your files <strong>(Arcadia)</strong>
-                        folder. <br />You can just click on
-                        it and install to test if the update working.</p>
-                    <br />
-                    <p style="color: crimson;">Keep in mind first installation will take time until Astoria initialize
-                    </p>
-                    <br />
-                    <p>Once update completed you can set the date back and enable WiFi.</p>
+                                    <br />
+                                    <h4>Filter &amp; Push</h4>
+                                    <ol>
+                                        <li>Choose <code>1. Filter packages</code> (Important to choose filter)</li>
+                                        <li>Read packages details, ensure date set to <code>(5th May 2016)</code></li>
+                                        <li>Ensure <strong>WiFi</strong> is not connected</li>
+                                        <li>If everything ready, choose <code>1. Push packages</code></li>
+                                    </ol>
 
-                    <h2 style="color: brown;">Troubleshoot</h2>
-                    <ul>
-                        <li>If there was no progress at Phone Update after pushing cabs, re-open `Phone Update` menu after few seconds and check again, if nothing started then try to push again.</li>
-                    </ul>
-                    <br />
-					<table border="1" cellpadding="10">
-    <thead>
-        <tr>
-            <th>Error Code</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>0x800b010a</td>
-            <td>Signature Verification Issue<br><strong>Solution:</strong> Enable flight signing</td>
-        </tr>
-        <tr>
-            <td>0x800b0101</td>
-            <td>Incorrect Date and Time<br><strong>Solution:</strong> Change date</td>
-        </tr>
-        <tr>
-            <td>0x80188302</td>
-            <td>Package already present on the image</td>
-        </tr>
-        <tr>
-            <td>0x80188305</td>
-            <td>Duplicate packages found in update set</td>
-        </tr>
-        <tr>
-            <td>0x80188306</td>
-            <td>File Collision or Not Found<br><strong>Solution:</strong> ensure list match InstalledPackages.csv</td>
-        </tr>
-        <tr>
-            <td>0x80188307</td>
-            <td>Package DSM; or contents are invalid<br><strong>Solution:</strong> Keep only one type in the folder CBS or SPKG,<br>Choose the correct packages type</td>
-        </tr>
-        <tr>
-            <td>0x80188308</td>
-            <td>Not enough space</td>
-        </tr>
-        <tr>
-            <td>0x800b0114</td>
-            <td>Certificate has an invalid name<br><strong>Solution:</strong> Enable flight signing</td>
-        </tr>
-        <tr>
-            <td>0x80004005</td>
-            <td>E_FAIL<br><strong>Solution:</strong> Reboot the phone and try again</td>
-        </tr>
-        <tr>
-            <td>0x802A0006</td>
-            <td>Try with another PC</td>
-        </tr>
-    </tbody>
-</table>
-                    <br />
-                    <br />
-                </div>
-                <div class="image">
-                    <img src="assets/imgs/home.512.png">
-                </div>
+                                    <br />
+                                    <h4>Monitor Progress</h4>
+                                    <p>Once iutool finished pushing packages, navigate to:</p>
+                                    <ol>
+                                        <li>Settings</li>
+                                        <li>Update &amp; Security</li>
+                                        <li>Phone Update</li>
+                                    </ol>
+                                    <p>And monitor the progress. <br />If you received any error, check errors list
+                                        below.</p> <br />
+                                    <p>Usually (Stage 01) is short. <br />But (Stage 02) will take time, <br />so please
+                                        wait and don't interrupt the process.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POST UPDATE Panel -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapsePostUpdate" style="color: black;">POST
+                                        UPDATE</a>
+                                </h4>
+                            </div>
+                            <div id="collapsePostUpdate" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <p>The update will add test app <strong>(CPU-Z)</strong> at your files
+                                        <strong>(Arcadia)</strong> folder. <br />You can just click on it and install to
+                                        test if the update working.
+                                    </p>
+                                    <br />
+                                    <p style="color: crimson;">Keep in mind first installation will take time until
+                                        Astoria initialize</p>
+                                    <br />
+                                    <p>Once update completed you can set the date back and enable WiFi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ROOT ACCESS 14320 Panel -->
+                        <div class="panel panel-success" hidden>
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseRootAccess">ROOT
+                                        ACCESS 14320</a>
+                                </h4>
+                            </div>
+                            <div id="collapseRootAccess" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <h4>MassStorage</h4>
+                                    <p style="color: crimson;">Switch to <b>MassStorage</b> using <b>Developer Menu</b></p>
+                                    <ul>
+                                        <li>- Reboot your phone</li>
+                                        <li>- Then hold <b>Volume Down</b> to show <code>Developer Menu</code></li>
+                                        <li>- Select <b>MassStorage</b>, press confirm button</li>
+                                    </ul>
+
+                                    <br/>
+                                    <h4>Enable RootAccess</h4>
+                                    <ul>
+                                        <li>- [<a target="_blank"
+                                            href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                        WPinternals-2.9.2 (ProjectA).zip</li>
+                                        <li>- Start WPinternals (ProjectA)</li>
+                                        <li>- Go to <code>Enable root access</code></li>
+                                        <li>- Click <code>Unlock phone</code></li>
+                                        <li>- Done, root access enabled</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Troubleshoot Panel -->
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseTroubleshoot">Troubleshoot</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTroubleshoot" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>If there was no progress at Phone Update after pushing cabs, re-open
+                                            <code>Phone Update</code> menu after few seconds and check again. If nothing
+                                            started, then try to push again.
+                                        </li>
+                                    </ul>
+                                    <br />
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Error Code</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>0x800b010a</td>
+                                                <td>Signature Verification Issue<br><strong>Solution:</strong> Enable
+                                                    flight signing</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x800b0101</td>
+                                                <td>Incorrect Date and Time<br><strong>Solution:</strong> Change date
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80188302</td>
+                                                <td>Package already present on the image</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80188305</td>
+                                                <td>Duplicate packages found in update set</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80188306</td>
+                                                <td>File Collision or Not Found<br><strong>Solution:</strong> Ensure
+                                                    list matches <code>InstalledPackages.csv</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80188307</td>
+                                                <td>Package DSM or contents are invalid<br><strong>Solution:</strong>
+                                                    Keep only one type in the folder (CBS or SPKG). Choose the correct
+                                                    package type</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80188308</td>
+                                                <td>Not enough space</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x800b0114</td>
+                                                <td>Certificate has an invalid name<br><strong>Solution:</strong> Enable
+                                                    flight signing</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x80004005</td>
+                                                <td>E_FAIL<br><strong>Solution:</strong> Reboot the phone and try again
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>0x802A0006</td>
+                                                <td>Try with another PC</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End of panel-group -->
+                </div> <!-- End of info -->
+
             </div>
         </div>
     </div>
