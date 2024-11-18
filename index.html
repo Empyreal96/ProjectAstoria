@@ -308,8 +308,8 @@
           <h1><b style="color: #5db720;">ASTORIA</b> ON <b style="color: #2067b7;">W10M</b></h1>
           <p>Project Astoria for all Lumia phones <code
               style="color: rgba(220, 20, 60, 0.76);">(OEM devices untested)</code></p>
-          <button id="about"><a class="menu" href="about.html">About</a></button>
-          <button id="get-started"><a class="menu" href="installation.html">Get Started</a></button>
+          <button class="home-button" id="about"><a class="menu" href="about.html">About</a></button>
+          <button class="home-button" id="get-started"><a class="menu" href="installation.html">Get Started</a></button>
         </div>
         <div class="image">
           <img src="assets/imgs/home.512.png">
@@ -318,6 +318,12 @@
     </div>
   </div>
   <!-- End Landing Page -->
+  <script>
+    $(".home-button").on("click", function (e) {
+      e.preventDefault();
+      window.location.href = $("#" + this.id + " a.menu").attr("href");
+    });
+  </script>
 </body>
 
 </html>
