@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectAstoria Installation</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
-    <!-- Include Bootstrap CSS -->
+
+    <link rel="stylesheet" href="assets/projecta.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,306 +16,48 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        /* Start Global Rules */
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Small */
-        @media (min-width: 768px) {
-            .container {
-                width: 750px;
-            }
-        }
-
-        /* Medium */
-        @media (min-width: 992px) {
-            .container {
-                width: 970px;
-            }
-        }
-
-        /* Large */
-        @media (min-width: 1200px) {
-            .container {
-                width: 1170px;
-            }
-        }
-
-        /* End Global Rules */
-
-        /* Start Landing Page */
-        .landing-page header {
-            min-height: 80px;
-            display: flex;
-        }
-
-        .btn-group-vertical>.btn-group::after,
-        .btn-group-vertical>.btn-group::before,
-        .btn-toolbar::after,
-        .btn-toolbar::before,
-        .clearfix::after,
-        .clearfix::before,
-        .container-fluid::after,
-        .container-fluid::before,
-        .container::after,
-        .container::before,
-        .dl-horizontal dd::after,
-        .dl-horizontal dd::before,
-        .form-horizontal .form-group::after,
-        .form-horizontal .form-group::before,
-        .modal-footer::after,
-        .modal-footer::before,
-        .modal-header::after,
-        .modal-header::before,
-        .nav::after,
-        .nav::before,
-        .navbar-collapse::after,
-        .navbar-collapse::before,
-        .navbar-header::after,
-        .navbar-header::before,
-        .navbar::after,
-        .navbar::before,
-        .pager::after,
-        .pager::before,
-        .panel-body::after,
-        .panel-body::before,
-        .row::after,
-        .row::before {
-            display: unset;
-            content: unset;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header {
-                min-height: auto;
-                display: initial;
-            }
-        }
-
-        .landing-page header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .container {
-                flex-direction: column;
-                justify-content: center;
-            }
-        }
-
-        .landing-page header .logo {
-            color: #5d5d5d;
-            font-style: italic;
-            text-transform: uppercase;
-            font-size: 20px;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .logo {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .landing-page header .links {
-            display: flex;
-            align-items: center;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .links {
-                text-align: center;
-                gap: 10px;
-                padding-bottom: 15px;
-            }
-        }
-
-        .landing-page header .links li {
-            margin-left: 30px;
-            color: #5d5d5d;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .links li {
-                margin-left: auto;
-            }
-        }
-
-        .landing-page header .links li:first-child {
-            border-radius: 20px;
-            padding: 10px 20px;
-            color: #FFF;
-            background-color: #5db720;
-        }
-
-        .landing-page header .links li:not(:first-child):hover {
-            color: #46b702;
-        }
-
-        .landing-page .content .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: calc(100vh - 80px);
-        }
-
-        @media (max-width: 767px) {
-            .landing-page .content .container {
-                min-height: calc(100vh - 101px);
-                justify-content: center;
-                flex-direction: column-reverse;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .landing-page .content .info {
-                text-align: left;
-                margin-bottom: 15px
-            }
-
-            .landing-page .content .info-main {
-                text-align: center !important;
-                margin-bottom: 15px
-            }
-        }
-
-        .landing-page .content .info h1 {
-            color: #5d5d5d;
-            font-size: 44px;
-        }
-
-        .landing-page .content .info p {
-            margin: 0;
-            line-height: 1.6;
-            font-size: 15px;
-            color: #5d5d5d;
-        }
-
-        .landing-page .content .info button {
-            border: 0;
-            border-radius: 20px;
-            padding: 12px 30px;
-            margin-top: 30px;
-            cursor: pointer;
-            color: #FFF;
-            background-color: #46b702;
-        }
-
-        .landing-page .content .image img {
-            max-width: 100%;
-        }
-
-        a {
-            color: unset !important;
-            text-decoration: none !important;
-        }
-
-        dl dt {
-            font-weight: bold;
-        }
-
-        code {
-            color: #007bff;
-            font-size: 15px;
-        }
-
-        li a.menu {
-            color: black;
-        }
-
-        li:first-child a.menu {
-            color: whitesmoke;
-        }
-
-        /* End Landing Page */
-
-        .panel-title a {
-            display: block;
-            width: 100%;
-        }
-
-        .panel-info>.panel-heading {
-            color: #31708f;
-            background-color: #66c7f7;
-        }
-
-        .panel-info {
-            border-color: #66c7f7;
-        }
-
-        .panel-success>.panel-heading {
-            color: #305b31;
-            background-color: #92e670;
-        }
-
-        .panel-warning>.panel-heading {
-            color: #eee;
-            background-color: #bf5b8f;
-        }
-
-        .panel-warning {
-            border-color: #bf5b8f;
-        }
-
-        .panel-danger>.panel-heading {
-            color: #fff;
-            background-color: #e15b5b;
-        }
-    </style>
+    <script src="assets/projecta.js"></script>
 </head>
 
 <body>
+    <div id="page-loader"><span class="loader"></span></div>
     <!-- Start Landing Page -->
     <div class="landing-page">
-        <header>
-            <div class="container">
-                <a href="index.html" class="logo">Project <b style="color: #5db720;">Astoria</b></a>
-                <ul class="links">
-                    <li><a class="menu" href="about.html">About</a></li>
-                    <li><a class="menu" href="installation.html">Installation</a></li>
-                    <li><a class="menu" href="tools.html">Repo</a></li>
-                    <li><a class="menu" href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-        </header>
+        <div id="header-placeholder"></div>
         <div class="content">
             <div class="container">
                 <div class="info" style="width: 100%;">
+                    <p style="color: crimson;">Choose <b>one</b> of the methods below, FFU or Device update</p>
                     <!-- Bootstrap Panels without Accordion -->
+                    <h2 style="color: dodgerblue;"><i
+                        class="fa fa-gears">&nbsp;</i>FFU UPDATE</h2>
                     <div class="panel-group">
+                        <!-- PRE-UPDATE Panel -->
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapsePreUpdate"><i
+                                        class="fa fa-video">&nbsp;</i>FFU GUIDE</a>
+                                </h4>
+                            </div>
+                            <div id="collapsePreUpdate" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    Check (<a target="_blank"
+                                        href="https://www.youtube.com/watch?v=85Kqiv0zoiQ"><i
+                                            class="fa fa-link">&nbsp;</i>This Video, Click here</a>) by Fadil Fadz on how
+                                    to update your retail FFU to 14320 directly.
+                                </div>
+                            </div>
+                        </div>
 
+                        <h2 style="color: green;"><i
+                            class="fa fa-mobile">&nbsp;</i>DEVICE UPDATE</h2>
                         <!-- REQUIREMENTS Panel -->
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapseRequirements">REQUIREMENTS</a>
+                                    <a data-toggle="collapse" href="#collapseRequirements"><i
+                                        class="fa fa-dice-one">&nbsp;</i>REQUIREMENTS</a>
                                 </h4>
                             </div>
                             <div id="collapseRequirements" class="panel-collapse collapse in">
@@ -321,13 +65,16 @@
                                     <ul>
                                         <li>- Phone with W10M build <strong>10586</strong></li>
                                         <li>- [<a target="_blank"
-                                                href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                                href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i
+                                                    class="fa fa-download">&nbsp;</i>Download</a>]
                                             Astoria update package </li>
                                         <li>- [<a target="_blank"
-                                                href="https://github.com/fadilfadz01/Universal_Updater/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                                href="https://github.com/fadilfadz01/Universal_Updater/releases/latest"><i
+                                                    class="fa fa-download">&nbsp;</i>Download</a>]
                                             Universal Updater 2.7.6 (Or higher) </li>
                                         <li>- [<a target="_blank"
-                                                href="https://github.com/ReneLergner/WPinternals/releases/latest"><i class="fa fa-download">&nbsp;</i>Download</a>]
+                                                href="https://github.com/ReneLergner/WPinternals/releases/latest"><i
+                                                    class="fa fa-download">&nbsp;</i>Download</a>]
                                             Windows Phone Internals (WPI)</li>
                                     </ul>
                                 </div>
@@ -338,7 +85,8 @@
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapsePreUpdate">PRE-UPDATE</a>
+                                    <a data-toggle="collapse" href="#collapsePreUpdate"><i
+                                        class="fa fa-dice-two">&nbsp;</i>PRE-UPDATE</a>
                                 </h4>
                             </div>
                             <div id="collapsePreUpdate" class="panel-collapse collapse in">
@@ -355,7 +103,8 @@
                         <div class="panel panel-success">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapseUpdateSteps">UPDATE
+                                    <a data-toggle="collapse" href="#collapseUpdateSteps"><i
+                                        class="fa fa-dice-three">&nbsp;</i>UPDATE
                                         STEPS</a>
                                 </h4>
                             </div>
@@ -367,9 +116,11 @@
                                         <li>Flash Retail FFU <code>Skip if you're on 10586</code></li>
                                         <li>Set Phone date to <code>5th May 2016</code></li>
                                         <li>Unlock bootloader (<a target="_blank"
-                                                href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/vF4AXTwL">PDF</a>
+                                                href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/vF4AXTwL"><i
+                                                    class="fa fa-link">&nbsp;</i>PDF</a>
                                             | <a target="_blank"
-                                                href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8">YouTube</a>)
+                                                href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8"><i
+                                                    class="fa fa-link">&nbsp;</i>YouTube</a>)
                                         </li>
                                     </ol>
 
@@ -397,7 +148,8 @@
                         <div class="panel panel-warning">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapseUpdaterGuide">UNIVERSAL UPDATER GUIDE</a>
+                                    <a data-toggle="collapse" href="#collapseUpdaterGuide"><i
+                                        class="fa fa-dice-four">&nbsp;</i>UNIVERSAL UPDATER GUIDE</a>
                                 </h4>
                             </div>
                             <div id="collapseUpdaterGuide" class="panel-collapse collapse in">
@@ -449,7 +201,8 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapsePostUpdate" style="color: black;">POST
+                                    <a data-toggle="collapse" href="#collapsePostUpdate" style="color: black;"><i
+                                        class="fa fa-dice-five">&nbsp;</i>POST
                                         UPDATE</a>
                                 </h4>
                             </div>
@@ -469,29 +222,35 @@
                         </div>
 
                         <!-- ROOT ACCESS 14320 Panel -->
-                        <div class="panel panel-success" hidden>
+                        <div class="panel panel-success">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapseRootAccess">ROOT
-                                        ACCESS 14320</a>
+                                    <a data-toggle="collapse" href="#collapseRootAccess"><i
+                                        class="fa fa-dice-six">&nbsp;</i>ROOT
+                                        ACCESS (14320)</a>
                                 </h4>
                             </div>
-                            <div id="collapseRootAccess" class="panel-collapse collapse in">
+                            <div id="collapseRootAccess" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <h4>MassStorage</h4>
-                                    <p style="color: crimson;">Switch to <b>MassStorage</b> using <b>Developer Menu</b></p>
+                                    <p style="color: crimson;">This feature still <b>experimental</b> use it at your own
+                                        responsibility</p>
+                                    <br>
+                                    <h4>1st MassStorage</h4>
+                                    <p style="color: crimson;">Switch to <b>MassStorage</b> using <b>Developer Menu</b>
+                                    </p>
                                     <ul>
                                         <li>- Reboot your phone</li>
                                         <li>- Then hold <b>Volume Down</b> to show <code>Developer Menu</code></li>
                                         <li>- Select <b>MassStorage</b>, press confirm button</li>
                                     </ul>
 
-                                    <br/>
-                                    <h4>Enable RootAccess</h4>
+                                    <br />
+                                    <h4>2nd Enable RootAccess</h4>
                                     <ul>
                                         <li>- [<a target="_blank"
-                                            href="https://drive.google.com/drive/folders/1v7bBAIIzSZGpibBvZ7RA5JHt_iGCs-Sk"><i class="fa fa-download">&nbsp;</i>Download</a>]
-                                        WPinternals-2.9.2 (ProjectA).zip</li>
+                                                href="https://drive.google.com/drive/folders/15lIaxH3t8sxbKb_WrXc-UOIeiJv-HtiR"><i
+                                                    class="fa fa-download">&nbsp;</i>Download</a>]
+                                            WPinternals-2.9.2 (ProjectA).zip</li>
                                         <li>- Start WPinternals (ProjectA)</li>
                                         <li>- Go to <code>Enable root access</code></li>
                                         <li>- Click <code>Unlock phone</code></li>
@@ -501,11 +260,46 @@
                             </div>
                         </div>
 
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapseIssues"><i
+                                        class="fa fa-bug">&nbsp;</i>KNOWN ISSUES</a>
+                                </h4>
+                            </div>
+                            <div id="collapseIssues" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Issue</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Render issue</td>
+                                                <td>This issue may occur on <b>Lumia 950s</b> with Astoria <b>10570+</b>
+                                                    but for specific apps<br />specificly with apps that use fullscreen
+                                                    mode may require to invoke bottom bar to keep it rendering</td>
+                                            </tr>
+                                            <tr>
+                                                <td>WiFi Access</td>
+                                                <td>On Astoria <b>10570+</b> some apps may not able to detect WiFi
+                                                    state, and will report "WiFi not connected"</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Troubleshoot Panel -->
                         <div class="panel panel-danger">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapseTroubleshoot">Troubleshoot</a>
+                                    <a data-toggle="collapse" href="#collapseTroubleshoot"><i
+                                        class="fa fa-circle-exclamation">&nbsp;</i>TROUBLESHOOT</a>
                                 </h4>
                             </div>
                             <div id="collapseTroubleshoot" class="panel-collapse collapse in">
@@ -577,7 +371,9 @@
                                 </div>
                             </div>
                         </div>
-
+                        <br />
+                        <br />
+                        <br />
                     </div> <!-- End of panel-group -->
                 </div> <!-- End of info -->
 

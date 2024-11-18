@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectAstoria FAQ</title>
     <link rel="shortcut icon" href="assets/favicon.ico" />
-    <!-- Include Bootstrap CSS -->
+
+    <link rel="stylesheet" href="assets/projecta.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,341 +15,194 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        /* Start Global Rules */
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Small */
-        @media (min-width: 768px) {
-            .container {
-                width: 750px;
-            }
-        }
-
-        /* Medium */
-        @media (min-width: 992px) {
-            .container {
-                width: 970px;
-            }
-        }
-
-        /* Large */
-        @media (min-width: 1200px) {
-            .container {
-                width: 1170px;
-            }
-        }
-
-        /* End Global Rules */
-
-        /* Start Landing Page */
-        .landing-page header {
-            min-height: 80px;
-            display: flex;
-        }
-
-        .btn-group-vertical>.btn-group::after,
-        .btn-group-vertical>.btn-group::before,
-        .btn-toolbar::after,
-        .btn-toolbar::before,
-        .clearfix::after,
-        .clearfix::before,
-        .container-fluid::after,
-        .container-fluid::before,
-        .container::after,
-        .container::before,
-        .dl-horizontal dd::after,
-        .dl-horizontal dd::before,
-        .form-horizontal .form-group::after,
-        .form-horizontal .form-group::before,
-        .modal-footer::after,
-        .modal-footer::before,
-        .modal-header::after,
-        .modal-header::before,
-        .nav::after,
-        .nav::before,
-        .navbar-collapse::after,
-        .navbar-collapse::before,
-        .navbar-header::after,
-        .navbar-header::before,
-        .navbar::after,
-        .navbar::before,
-        .pager::after,
-        .pager::before,
-        .panel-body::after,
-        .panel-body::before,
-        .row::after,
-        .row::before {
-            display: unset;
-            content: unset;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header {
-                min-height: auto;
-                display: initial;
-            }
-        }
-
-        .landing-page header .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .container {
-                flex-direction: column;
-                justify-content: center;
-            }
-        }
-
-        .landing-page header .logo {
-            color: #5d5d5d;
-            font-style: italic;
-            text-transform: uppercase;
-            font-size: 20px;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .logo {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .landing-page header .links {
-            display: flex;
-            align-items: center;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .links {
-                text-align: center;
-                gap: 10px;
-                padding-bottom: 15px;
-            }
-        }
-
-        .landing-page header .links li {
-            margin-left: 30px;
-            color: #5d5d5d;
-            cursor: pointer;
-            transition: .3s;
-        }
-
-        @media (max-width: 767px) {
-            .landing-page header .links li {
-                margin-left: auto;
-            }
-        }
-
-        .landing-page header .links li:first-child {
-            border-radius: 20px;
-            padding: 10px 20px;
-            color: #FFF;
-            background-color: #5db720;
-        }
-
-        .landing-page header .links li:not(:first-child):hover {
-            color: #46b702;
-        }
-
-        .landing-page .content .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: calc(100vh - 80px);
-        }
-
-        @media (max-width: 767px) {
-            .landing-page .content .container {
-                min-height: calc(100vh - 101px);
-                justify-content: center;
-                flex-direction: column-reverse;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .landing-page .content .info {
-                text-align: left;
-                margin-bottom: 15px
-            }
-
-            .landing-page .content .info-main {
-                text-align: center !important;
-                margin-bottom: 15px
-            }
-        }
-
-        .landing-page .content .info h1 {
-            color: #5d5d5d;
-            font-size: 44px;
-        }
-
-        .landing-page .content .info p {
-            margin: 0;
-            line-height: 1.6;
-            font-size: 15px;
-            color: #5d5d5d;
-        }
-
-        .landing-page .content .info button {
-            border: 0;
-            border-radius: 20px;
-            padding: 12px 30px;
-            margin-top: 30px;
-            cursor: pointer;
-            color: #FFF;
-            background-color: #46b702;
-        }
-
-        .landing-page .content .image img {
-            max-width: 100%;
-        }
-
-        a {
-            color: unset !important;
-            text-decoration: none !important;
-        }
-
-        dl dt {
-            font-weight: bold;
-        }
-
-        code {
-            color: #007bff;
-            font-size: 15px;
-        }
-
-        li a.menu {
-            color: black;
-        }
-
-        li:first-child a.menu {
-            color: whitesmoke;
-        }
-
-        /* End Landing Page */
-
-        .panel-title a {
-            display: block;
-            width: 100%;
-        }
-
-        .panel-info>.panel-heading {
-            color: #31708f;
-            background-color: #66c7f7;
-        }
-
-        .panel-info {
-            border-color: #66c7f7;
-        }
-
-        .panel-success>.panel-heading {
-            color: #305b31;
-            background-color: #92e670;
-        }
-
-        .panel-warning>.panel-heading {
-            color: #eee;
-            background-color: #bf5b8f;
-        }
-
-        .panel-warning {
-            border-color: #bf5b8f;
-        }
-
-        .panel-danger>.panel-heading {
-            color: #fff;
-            background-color: #e15b5b;
-        }
-    </style>
+    <script src="assets/projecta.js"></script>
 </head>
 
 <body>
+    <div id="page-loader"><span class="loader"></span></div>
     <!-- Start Landing Page -->
     <div class="landing-page">
-        <header>
-            <div class="container">
-                <a href="index.html" class="logo">Project <b style="color: #5db720;">Astoria</b></a>
-                <ul class="links">
-                    <li><a class="menu" href="about.html">About</a></li>
-                    <li><a class="menu" href="installation.html">Installation</a></li>
-                    <li><a class="menu" href="tools.html">Repo</a></li>
-                    <li><a class="menu" href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-        </header>
+        <div id="header-placeholder"></div>
         <div class="content">
             <div class="container">
-                <div class="info">
+                <div class="info" style="width: 100%;">
                     <h2 style="color: crimson;">QUESTIONS &amp; ANSWERS</h2>
-                    <dl>
-                        <dt>Can I interop Unlock?</dt>
-                        <dd>Yes, generally features cabs will make initial interop unlock.</dd>
-                        <dd>you can later perform full interop unlock using Interop Tools</dd>
-                        <br />
-                        <dt>Can I boot to MassStorage?</dt>
-                        <dd>Yes, but with the Developer menu, which will also be added with the features cabs.
-                            <br />This
-                            build isn't supported by WPI, so you may not be able to switch to MassStorage with it.
-                        </dd>
-                        <br />
-                        <dt>How to use Developer menu?</dt>
-                        <dd>Once the phone booted, at Microsoft logo, hold volume down.</dd>
-                        <br />
-                        <dt>Can I update to higher builds later?</dt>
-                        <dd>Yes, using offline updater, but you will lose Astoria. <br />Astoria currently only works
-                            with
-                            builds 14320 and below.</dd>
-                        <br />
-                        <dt>Why should I change device time?</dt>
-                        <dd>Those are test signed builds and not production signed builds. <br />You cannot update to
-                            them unless you have date before the default expiry date.</dd>
-                        <br />
-                        <dt>Do those builds expire later?</dt>
-                        <dd>No</dd>
-                        <br />
-                        <dt>Why should I disable WiFi?</dt>
-                        <dd>To avoid the time reset to the current time.</dd>
-                        <br />
-                        <dt>What does (Stage 01) do?</dt>
-                        <dd>It will enable FlightSign, as mentioned above you need it because the build is test signed.
-                        </dd>
-                        <br />
-                        <dt>Should I enable all (Features cabs)?</dt>
-                        <dd>Yes, otherwise you will have difficulties to boot to MassStorage, <br />even to Interop
-                            unlock, since this build isn't officially supported by WPI.</dd>
-                        <br />
-                        <br />
-                    </dl>
-                </div>
-                <div class="image">
-                    <img src="assets/imgs/home.512.png">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseInterop">Can I interop Unlock?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseInterop" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Yes, generally features cabs will make initial interop unlock.
+                                <br />
+                                you can later perform full interop unlock using Interop Tools
+                                <br />
+                                <br />
+                                Interop Unlock Guide (<a target="_blank"
+                                    href="https://mega.nz/folder/KB4ARBqa#TEjrD2Lk47uI0CBhBPO9tQ/folder/eV4A0b7R"><i
+                                        class="fa fa-link">&nbsp;</i>PDF</a>
+                                | <a target="_blank"
+                                    href="https://www.youtube.com/playlist?list=PLqApXjyJOxtlyoPYVnA3NJTBXdCSD4HI8"><i
+                                        class="fa fa-link">&nbsp;</i>YouTube</a>)
+                                <p style="color: crimson;">For 950s go with MassStorage option, much easier<br /></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseMassStorage">Can I boot to MassStorage?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseMassStorage" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Yes, but with the <b>Developer menu</b>, which will also be added with the features cabs
+                                <br />
+                                This build isn't supported by WPI, so you may not be able to switch to MassStorage with
+                                it.
+                                <br>
+                                <br>
+                                <h4>Steps</h4>
+                                <p style="color: crimson;">Switch to <b>MassStorage</b> using <b>Developer Menu</b>
+                                </p>
+                                <ul>
+                                    <li>- Reboot your phone</li>
+                                    <li>- Then hold <b>Volume Down</b> to show <code>Developer Menu</code></li>
+                                    <li>- Select <b>MassStorage</b>, press confirm button</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseRootAccess">Can I enable RootAccess?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseRootAccess" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Yes, but keep in mind:
+                                <p style="color: crimson;">This feature still <b>experimental</b> use it at your own
+                                    responsibility</p>
+                                <br>
+                                <h4>1st MassStorage</h4>
+                                <p style="color: crimson;">Switch to <b>MassStorage</b> using <b>Developer Menu</b>
+
+                                <br />
+                                <h4>2nd Enable RootAccess</h4>
+                                <ul>
+                                    <li>- [<a target="_blank"
+                                            href="https://drive.google.com/drive/folders/15lIaxH3t8sxbKb_WrXc-UOIeiJv-HtiR"><i
+                                                class="fa fa-download">&nbsp;</i>Download</a>]
+                                        WPinternals-2.9.2 (ProjectA).zip</li>
+                                    <li>- Start WPinternals (ProjectA)</li>
+                                    <li>- Go to <code>Enable root access</code></li>
+                                    <li>- Click <code>Unlock phone</code></li>
+                                    <li>- Done, root access enabled</li>
+                                </ul>
+                                <br />
+                                <p style="color: green;">You can revert this step anytime with the same steps but using <code>Disable root access</code></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseUpdate">Can I update to higher builds
+                                    later?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseInterop" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Yes, using offline updater
+                                <p style="color: crimson;">but you will lose Astoria. <br />Astoria currently only works
+                                    with
+                                    builds 14320 and below.<br /></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseTime">Why should I change device time?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTime" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Those are test signed builds and not production signed builds. <br />You cannot update
+                                to
+                                them unless you have date before the default expiry date.
+                                <br />
+                                <br />
+                                <b>Do those builds expire later?</b>
+                                No.
+                                <br />
+                                <br />
+                                <p style="color: green;">However, you can set the time back once you finished the update
+                                    process</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseWIFI">Why should I disable WiFi?
+                            </h4>
+                        </div>
+                        <div id="collapseWIFI" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                To avoid the time reset to the current time.
+                                <br />
+                                <p style="color: green;">However, you can enable WiFi back once you finished the update
+                                    process</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseStages">What does each (Stage) do?
+                            </h4>
+                        </div>
+                        <div id="collapseStages" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <h4>Stage 01</h4>
+                                It will enable FlightSign, as mentioned above you need it because the build is test
+                                signed.
+                                <br />
+                                <br />
+                                <h4>Stage 02</h4>
+                                It will push 14320 update along with features cabs such as:
+                                <ul>
+                                    <li>- ProjectA</li>
+                                    <li>- CMD Injector</li>
+                                    <li>- CPU-Z test app</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseFeatures">Should I enable all (Features cabs)?
+                            </h4>
+                        </div>
+                        <div id="collapseFeatures" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                Yes, otherwise you will have difficulties to boot to MassStorage, <br />even to Interop
+                                unlock, since this build isn't officially supported by WPI.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
